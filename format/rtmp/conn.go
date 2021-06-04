@@ -92,6 +92,6 @@ func (c *Conn) flushWrite() error {
 	return c.wrapRW.Flush()
 }
 
-func (c *Conn) CloseNotify() <-chan bool {
+func (c *Conn) CloseNotification() <-chan bool {
 	return c.CloseNotify
 }
