@@ -528,7 +528,7 @@ func (c *Conn) startPeekReadLoop() {
 	if c.writing() {
 		go func() {
 			io.Copy(ioutil.Discard, c.wrapRW.rw)
-			c.closeNotify <- true
+			c.CloseNotify <- true
 		}()
 	}
 }

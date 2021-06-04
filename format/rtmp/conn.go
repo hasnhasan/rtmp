@@ -29,7 +29,7 @@ type Conn struct {
 	PubPlayErr            error
 	PubPlayOnStatusParams flvio.AMFMap
 
-	closeNotify chan bool
+	CloseNotify chan bool
 
 	wrapRW *wrapReadWriter
 
@@ -57,7 +57,7 @@ type Conn struct {
 
 func NewConn(rw ReadWriteFlusher) *Conn {
 	c := &Conn{}
-	c.closeNotify = make(chan bool, 1)
+	c.CloseNotify = make(chan bool, 1)
 	c.wrapRW = newWrapReadWriter(c, rw)
 	c.readcsmap = make(map[uint32]*message)
 	c.ReadMaxChunkSize = 128
@@ -93,5 +93,5 @@ func (c *Conn) flushWrite() error {
 }
 
 func (c *Conn) CloseNotify() <-chan bool {
-	return c.closeNotify
+	return c.CloseNotify
 }
