@@ -6,11 +6,11 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/nareix/joy5/av"
-	"github.com/nareix/joy5/codec/aac"
-	"github.com/nareix/joy5/codec/h264"
-	"github.com/nareix/joy5/format/mp4/mp4io"
-	"github.com/nareix/joy5/utils/bits/pio"
+	"github.com/hasnhasan/rtmp/av"
+	"github.com/hasnhasan/rtmp/codec/aac"
+	"github.com/hasnhasan/rtmp/codec/h264"
+	"github.com/hasnhasan/rtmp/format/mp4/mp4io"
+	"github.com/hasnhasan/rtmp/utils/bits/pio"
 	"github.com/pkg/errors"
 )
 
